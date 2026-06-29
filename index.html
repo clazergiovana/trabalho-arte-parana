@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancestralidade Paranaense: Arte, Cultura e Luta Indígena</title>
+    <style>
+        :root {
+            --dark-blue: #07162c;
+            --mid-blue: #0f2c52;
+            --electric-green: #39FF14;
+            --leaf-green: #1f6633;
+            --vibrant-yellow: #FFD700;
+            --matte-dark: #121820;
+            --text-light: #e6edfd;
+            --text-muted: #a0aec0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--matte-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Hero Section com a Imagem 1 de fundo */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 60px;
+            background: linear-gradient(90deg, var(--dark-blue) 45%, rgba(7, 22, 44, 0.3) 100%),
+                        url('https://media.gazetadopovo.com.br/2023/01/09112009/indigenas-etnia-pareci-960x540.jpg') no-repeat center center/cover;
+            border-left: 15px solid var(--vibrant-yellow);
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--vibrant-yellow);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            border-left: 3px solid var(--leaf-green);
+            padding-left: 20px;
+        }
+
+        /* Navegação Superior Translúcida */
+        nav {
+            background-color: rgba(15, 44, 82, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 60px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--vibrant-yellow);
+        }
+
+        /* Layout de Grade Assimétrico */
+        .main-layout {
+            max-width: 1300px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .content-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .block-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .block-title::before {
+            content: '';
+            width: 30px;
+            height: 6px;
+            background-color: var(--leaf-green);
+            display: inline-block;
+        }
+
+        .card-custom {
+            background-color: var(--mid-blue);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: var(--vibrant-yellow);
+            font-size: 1.5rem;
+            margin: 35px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #cbd5e0;
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: #e2e8f0;
+        }
+
+        li::before {
+            content: "→";
+            color: var(--vibrant-yellow);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Molduras para as Imagens Enviadas */
+        .image-frame {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            margin: 40px 0;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            background-color: var(--dark-blue);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Botões Estilo Cyber-Brutalista */
+        .btn-wrapper {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .action-button {
+            background: transparent;
+            color: var(--vibrant-yellow);
+            border: 2px solid var(--vibrant-yellow);
+            padding: 15px 30px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: var(--vibrant-yellow);
+            color: var(--dark-blue);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .action-button.alt-btn {
+            color: white;
+            border-color: var(--leaf-green);
+        }
+
+        .action-button.alt-btn:hover {
+            background-color: var(--leaf-green);
+            color: white;
+            box-shadow: 0 0 20px rgba(31, 102, 51, 0.4);
+        }
+
+        /* Painel Lateral */
+        .quick-facts {
+            background: linear-gradient(180deg, var(--mid-blue), var(--dark-blue));
+            border-radius: 20px;
+            padding: 35px;
+            border-top: 5px solid var(--leaf-green);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .quick-facts h4 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background-color: #040d1a;
+            padding: 80px 60px;
+            margin-top: 120px;
+            border-top: 4px solid var(--leaf-green);
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        /* Caixa Neon de Créditos */
+        .group-credits {
+            background-color: var(--dark-blue);
+            border: 2px solid var(--vibrant-yellow);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.05);
+        }
+
+        .group-credits p {
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            text-align: left;
+            color: white;
+        }
+
+        .group-credits .highlight-text {
+            color: var(--vibrant-yellow);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .sidebar-sticky { position: relative; top: 0; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero { padding: 40px; }
+            nav { padding: 20px; justify-content: center; }
+            nav a { margin: 0 15px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Memória e Tradição <span>Indígenas</span></h1>
+            <p>A riqueza cultural dos povos Kaingang, Guarani e Xetá: manifestações, a arte sutil do artesanato e os legados indeléveis na história do Paraná.</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#etnias">Etnias</a>
+        <a href="#artes">Artesanato</a>
+        <a href="#adornos">Vestimentas</a>
+        <a href="#legados">Legados</a>
+    </nav>
+
+    <div class="main-layout">
+        
+        <div class="content-stream">
+            
+            <div class="card-custom" id="etnias">
+                <h2 class="block-title">As Três Matrizes Étnicas</h2>
+                <p>O território paranaense guarda uma profunda riqueza histórica amparada na coexistência de três povos nativos principais. Cada comunidade possui laços indissociáveis com a conservação das matas e bacias hidrográficas originais.</p>
+                
+                <h3>O Povo Kaingang</h3>
+                <p>Habitantes tradicionais das áreas de planalto e florestas de pinheirais. A sua sociedade divide-se de maneira dual entre as metades Kamé e Kairu. Essa divisão milenar orienta desde as pinturas, casamentos e governança política até as decorações rituais do grupo.</p>
+                
+                <h3>O Povo Guarani</h3>
+                <p>Presentes no litoral e nas matas do interior paranaense, dividem-se principalmente entre as vertentes Mbyá e Nhandeva. Seus costumes centram-se na espiritualidade constante e no conceito do <em>nhandereko</em> (o modo tradicional de viver em comunhão com o ecossistema).</p>
+                
+                <h3>O Povo Xetá</h3>
+                <p>Moradores originários do vale do Rio Ivaí e da Serra dos Dourados. Após sofrerem graves reduções de espaço devido ao contato tardio em meados do século XX, os núcleos familiares sobreviventes atuam hoje de forma ativa no resgate de sua língua e tradição oral.</p>
+
+                <div class="image-frame">
+                    <img src="https://ijsn.es.gov.br/Media/IJSN/_Profiles/c4d8c6e6/3e1cf426/LEO_Otero.jpg?v=638805076133378460" alt="Integração e cultura dos povos originários">
+                </div>
+            </div>
+
+            <div class="card-custom" id="artes">
+                <h2 class="block-title">A Expressão da Cultura Material</h2>
+                <p>O artesanato das comunidades indígenas paranaenses envolve técnicas complexas de botânica e trançados que carregam significados sociais repassados entre gerações através de fibras nativas.</p>
+                
+                <h3>Cestaria e o Grafismo Geométrico</h3>
+                <p>Os trançados de taquara e cipó produzidos pelos Kaingang trazem padronagens visuais únicas. Formas lineares, losangos ou retângulos vazados marcam o clã <strong>Kamé</strong> (associados ao sol). Por outro lado, composições com triângulos preenchidos, círculos e pontos representam a metade <strong>Kairu</strong> (associados à lua e às formas orgânicas).</p>
+                
+                <h3>A Escultura em Madeira</h3>
+                <p>Os artesãos Guarani possuem grande domínio no entalhe em madeiras leves como a caixeta. Suas pequenas esculturas reproduzem em miniatura os animais da fauna nativa, utilizando pigmentações escuras extraídas da casca de árvores e carvão vegetal para os detalhes minuciosos.</p>
+
+                <div class="btn-wrapper">
+                    <a href="https://www.museuparanaense.pr.gov.br/" target="_blank" class="action-button">Ver Acervos no Museu Paranaense</a>
+                    <a href="https://pib.socioambiental.org/pt/P%C3%A1gina_principal" target="_blank" class="action-button alt-btn">Estudos Antropológicos (ISA)</a>
+                </div>
+            </div>
+
+            <div class="card-custom" id="adornos">
+                <h2 class="block-title">Vestimentas e Rituais Visuais</h2>
+                <p>As formas de cobrir e adornar o corpo representam importantes símbolos de preservação cultural e de autoafirmação identitária.</p>
+                
+                <h3>A Tecelagem de Urtiga e Mantas Kuri</h3>
+                <p>Tradicionalmente, tecelãs Kaingang preparavam fios a partir da fibra da urtiga-brava (<em>fág</em>) para confeccionar grandes mantas grossas chamadas <em>kuri</em>, fundamentais para a proteção contra os invernos do planalto. Hoje, esses grafismos ancestrais inspiram as estampas de trajes cerimoniais em grandes assembleias.</p>
+                
+                <h3>Adornos Sagrados e Pinturas Corporais</h3>
+                <ul>
+                    <li><strong>Colares de Sementes:</strong> Confeccionados com sementes locais (tento, lágrimas-de-nossa-senhora), servindo como ornamentos estéticos e elementos protetores nas florestas.</li>
+                    <li><strong>Arte Plumária:</strong> Tiaras rituais feitas com penas de aves locais, utilizadas por lideranças espirituais e pajés durante cantos cerimoniais de cura.</li>
+                    <li><strong>Pintura com Jenipapo e Urucum:</strong> Traços aplicados diretamente sobre a pele para indicar o pertencimento aos clãs, casamentos ou momentos solenes de luto.</li>
+                </ul>
+
+                <div class="image-frame">
+                    <img src="https://segib.org/wp-content/uploads/2025/06/cohesion-social-indigenas-1440x958.jpg" alt="Coesão social e manifestações culturais">
+                </div>
+            </div>
+
+            <div class="card-custom" id="legados">
+                <h2 class="block-title">O Legado nos Costumes Locais</h2>
+                <p>Muitos dos hábitos incorporados à rotina paranaense contemporânea nasceram diretamente do conhecimento botânico e prático desenvolvido pelas populações originárias.</p>
+                
+                <h3>Erva-Mate, Pinhão e Vocabulário</h3>
+                <p>A técnica de desidratar e consumir as folhas da **erva-mate** na forma do chimarrão ou do tereré foi herdada diretamente dos povos indígenas. Da mesma forma, a coleta do **pinhão** (semente da Araucária) garantia o sustento alimentar básico durante os meses de inverno. Adicionalmente, nomes de rios e importantes cidades do Paraná como **Iguaçu** (Água Grande), **Tibagi** (Rio encachoeirado) e **Curitiba** (Lugar repleto de pinheiros) provêm diretamente da raiz linguística nativa.</p>
+
+                <div class="btn-wrapper">
+                    <a href="https://www.gov.br/funai/pt-br" target="_blank" class="action-button">Acessar Portal da FUNAI</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar-sticky">
+            <div class="quick-facts">
+                <h4>Saberes Botânicos</h4>
+                <p style="font-size: 0.95rem; color: #a0aec0;">O uso medicinal de plantas como o guaco, a carqueja e a espinheira-santa baseia-se diretamente nos conhecimentos passados por gerações através das tradições indígenas.</p>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+                <h4>Preservação Ecológica</h4>
+                <p style="font-size: 0.95rem; color: #a0aec0;">Hoje, as matas preservadas em terras indígenas demarcadas funcionam como importantes barreiras ecológicas contra o avanço do desmatamento ilegal no estado.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Etnologia Paranaense</h3>
+                <p style="color: var(--text-muted); margin: 0;">Espaço digital escolar dedicado à divulgação de pesquisas sobre a história, a arte e a cultura material dos povos originários do Paraná.</p>
+            </div>
+            
+            <div class="group-credits">
+                <p><strong>Projeto Desenvolvido por:</strong></p>
+                <p class="highlight-text">1º Ano A</p>
+                <p>Alunas: Giovana, Alissa, Kethly, Hemily e Emily C.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
